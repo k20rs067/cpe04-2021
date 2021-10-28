@@ -200,6 +200,14 @@
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
     }
+
+     function btnDClick(e){
+        alarm();
+        active = false;
+        period =180;
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間： " + period);
+    }
     
  
     // 繰り返し実行する処理
