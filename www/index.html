@@ -198,7 +198,7 @@
         active = false;
         period = 60*parseInt($("#minute").val())+parseInt($("#second").val());
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period);
+        $("#remain").html("残り時間： " + parseInt(period/60) + "分" + period%60 + "秒");
     }
 
      function btnDClick(e){
@@ -206,7 +206,7 @@
         active = false;
         period =180;
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period);
+        $("#remain").html("残り時間： " + parseInt(period/60) + "分" + period%60 + "秒");
     }
      
  
@@ -216,7 +216,7 @@
           var time = parseInt((new Date() - startTime)/1000);
           var rest = period - time;
           $("#time").html("経過時間： " + time);
-          $("#remain").html("残り時間： " + rest);
+          $("#remain").html("残り時間： " + parseInt(rest/60) + "分" + rest%60 + "秒");
           analog(rest);
           if(rest <= 0){
             active = 0;
